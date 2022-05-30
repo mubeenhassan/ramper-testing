@@ -12,5 +12,5 @@ test('Signin With Google', async ({ page }) => {
   await page1.locator('[aria-label="Enter your password"]').fill(process.env.GOOGLE_PASSWORD);
   page1.locator('#passwordNext button:has-text("Next")').click()
   await page.locator('text=My wallet').click();
-  await page.screenshot({ path: `../screenshots/${Date.now()}signin.png` })
+  await page.screenshot({ path: `./screenshots/${Date.now()}signin.png` })
 })

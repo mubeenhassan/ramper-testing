@@ -11,6 +11,6 @@
     "@playwright/test": "^1.22.2"
   },
   "dependencies": {
-    "dotnet": "^1.1.4"
+    "dotenv": "^16.0.1"
   }
 }
