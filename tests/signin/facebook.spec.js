@@ -1,6 +1,6 @@
 require('dotenv').config()
 const { test, expect } = require('@playwright/test')
-test('Signin With Google', async ({ page }) => {
+test('Signin With Facebook', async ({ page }) => {
   await page.goto(process.env.URL)
   await page.locator('text=Sign In').click();
   const [page1] = await Promise.all([
