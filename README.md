@@ -33,5 +33,5 @@ TWITTER_PASSWORD=
 npx playwright test ./tests/signin/eth/google.spec.js
 
 # Login with Google 
-npx playwright test --headed ./tests/signin/google.spec.js
+npx playwright test --headed ./tests/signin/eth/google.spec.js
 ```
