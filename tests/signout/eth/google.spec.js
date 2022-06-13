@@ -1,6 +1,6 @@
 require('dotenv').config()
 const { test, expect } = require('@playwright/test')
-test('Signin With Google', async ({ page }) => {
+test('Signin and Signout With Google', async ({ page, browserName }) => {
   await page.goto(process.env.URL)
   await page.locator('text=Sign In').click();
   const [page1] = await Promise.all([
@@ -11,5 +11,7 @@ test('Signin With Google', async ({ page }) => {
   page1.locator('[aria-label="Email or phone"]').press('Enter')
   await page1.locator('[aria-label="Enter your password"]').fill(process.env.GOOGLE_PASSWORD);
   page1.locator('#passwordNext button:has-text("Next")').click()
-  await expect(page.locator('text=Sign In Succeeded!').first()).toBeVisible()
+  await page.locator('text=Sign out').click()
+  await expect(page.locator('text=Sign Out Succeeded!').first()).toBeVisible()
+  console.log("Browser Name : "+browserName)
 })

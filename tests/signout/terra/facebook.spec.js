@@ -2,6 +2,7 @@ require('dotenv').config()
 const { test, expect } = require('@playwright/test')
 test('Signin With Facebook', async ({ page }) => {
   await page.goto(process.env.URL)
+  await page.locator('text=Terra').click();
   await page.locator('text=Sign In').click();
   const [page1] = await Promise.all([
     page.waitForEvent('popup'),
@@ -13,5 +14,6 @@ test('Signin With Facebook', async ({ page }) => {
   await Promise.all([
     page1.locator('[placeholder="Password"]').press('Enter')
   ]);
-  await expect(page.locator('text=Sign In Succeeded!').first()).toBeVisible()
+  await page.locator('text=My wallet').click();
+  await page.screenshot({ path: `./screenshots/${Date.now()}signin.png` })
 })

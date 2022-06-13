@@ -13,5 +13,6 @@ test('Signin With Facebook', async ({ page }) => {
   await Promise.all([
     page1.locator('[placeholder="Password"]').press('Enter')
   ]);
-  await expect(page.locator('text=Sign In Succeeded!').first()).toBeVisible()
+  await page.locator('text=Sign out').click()
+  await expect(page.locator('text=Sign Out Succeeded!').first()).toBeVisible()
 })

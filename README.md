@@ -29,9 +29,15 @@ TWITTER_PASSWORD=
 
 ## Runing test cases
 ```
-# Login with Google running test in the background
-npx playwright test ./tests/signin/eth/google.spec.js
+# Login Ethereum with Google test case
+npx playwright test tests/ethereum/google
 
-# Login with Google 
-npx playwright test --headed ./tests/signin/eth/google.spec.js
 ```
+
+## Headless mode
+
+Change the headless:true in playwright.config.js to run the test in background 
+
+## Run test on multiple browsers ( Firefox Webkit (safari))
+
+Uncomment the browsers in playwright.config.js file

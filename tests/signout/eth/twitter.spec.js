@@ -13,6 +13,7 @@ test('Signin With Twitter', async ({ page }) => {
   await Promise.all([
     page1.locator('text=Authorize app').click()
   ]);
-  await expect(page.locator('text=Sign In Succeeded!').first()).toBeVisible()
+  await page.locator('text=Sign out').click()
+  await expect(page.locator('text=Sign Out Succeeded!').first()).toBeVisible()
 })
 
